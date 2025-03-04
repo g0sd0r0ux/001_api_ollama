@@ -12,6 +12,9 @@ RUN ollama pull mistral
 RUN ollama pull deepseek-coder
 RUN ollama pull llama3
 
+# Instalar dependencias de python desde el archivo 'requirements.txt'
+RUN pip install -r requirements.txt
+
 # Expone el puerto 11434 (puerto predeterminado de Ollama)
 EXPOSE 11434
 
