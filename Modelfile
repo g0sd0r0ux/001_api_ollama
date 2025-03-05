@@ -1,7 +1,7 @@
 FROM llama3
 
 # Parámetros del modelo
-PARAMETER temperature 1
+PARAMETER temperature 0.7
 PARAMETER num_ctx 4096
 
 # Instrucciones para el modelo

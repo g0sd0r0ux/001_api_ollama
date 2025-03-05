@@ -1,0 +1,19 @@
+version: 3.8
+
+services:
+  chatgpt:
+    image: ghcr.io/ivanfioravanti/chatbot-ollama:main
+    ports:
+      - 3000:3000
+    environment:
+      - DEFAULT_MODEL=asist-cultural
+      - OLLAMA_HOST=http://ollama:11434
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ./ollama/models:/ollama/models
+    environment:
+      - OLLAMA_MODELS=/ollama/models
+
+# Ejecutar 'docker-compose exec ollama ollama pull llama2' cada vez que
+# se necesite un nuevo modelo
